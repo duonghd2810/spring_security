@@ -1,0 +1,29 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1433;databaseName=testsecurity
+    username: sa
+    password: 123
+  data:
+    cassandra:
+      schema-action: create_if_not_exists
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
+    show-sql: true
+  jackson:
+    time-zone: GMT+7
+logging:
+  level:
+    org:
+      springframework:
+        web: TRACE
+email:
+  username: hoangdangduong2001@gmail.com
+  password: upnkhhyrsiaefvzt
