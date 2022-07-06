@@ -61,7 +61,7 @@ public class AuthController {
         final String jwt = jwtUtil.generateToken(userDetails);
         User user = userRepository.findByUsername(authenticationRequest.getUsername());
         List<String> roles = new ArrayList<>();
-        Set<Role> roleSet = new HashSet<>();
+        Set<Role> roleSet = user.getRoless();
         if(roleSet.size() > 0){
             roleSet.forEach(item -> roles.add(item.getRoleName()));
         }
