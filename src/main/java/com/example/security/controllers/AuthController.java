@@ -68,7 +68,7 @@ public class AuthController {
         return ResponseEntity.ok(new AuthenticationResponse(jwt,user.getIdUser().intValue(),user.getUsername(),roles));
     }
     @PostMapping("/signup-user")
-//    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> signupUser(@RequestBody UserDTO userDTO) throws InvalidObjectException {
         User oldUser = userRepository.findByUsername(userDTO.getUsername());
         if(oldUser != null) {
